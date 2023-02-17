@@ -9,5 +9,18 @@
 </head>
 <body>
     
+    <script>
+
+       let options = ['Rock', 'Paper', 'Scissors'];
+
+       function getComputerChoice() {
+        let choice = options[Math.floor(Math.random() * options.length)];
+        console.log(choice);
+        return choice;
+       }
+
+       getComputerChoice()
+
+    </script>
 </body>
 </html>
