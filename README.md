@@ -1,1 +1,3 @@
-# rock-paper-scissors
+I have struggled to get this far! I will complete this project. It will take me a lot of time and thought but I will complete it.
+
+I am making a 'simple' rock, paper, scissors game. It will be played solely in the console so it will only really be using Javascript. Let's go...
