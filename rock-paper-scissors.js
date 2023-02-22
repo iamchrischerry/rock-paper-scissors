@@ -5,28 +5,39 @@ function getComputerChoice() {
     console.log(computerChoice);
     return computerChoice;
 }
-const playerChoice = prompt ("Choose your weapon.")
+const computerChoice = getComputerChoice();
+
+
+const playerChoice =  prompt("Choose your weapon...")
 console.log(playerChoice);
 
 function checkWinner(computerChoice, playerChoice) {
     if (playerChoice == computerChoice) {
-        return "Tie";
+        return "tie";
     }
-    else {
-        return "No Tie"
+    else if ((playerChoice == "rock" && computerChoice == "scissors") ||
+             (playerChoice == "scissors" && computerChoice == "paper") ||
+             (playerChoice == "paper" && computerChoice == "rock")) {
+        return "player-wins";
+    }
+    else { 
+        return "computer-wins";
     }
 }
 
 function playRound(playerChoice, computerChoice){
-    const result = checkWinner(playerChoice, computerChoice);{
-        if (result == "Tie"){
-            return "It's a Tie!"
+    const result = checkWinner(computerChoice, playerChoice);{
+        if (result == "tie"){
+            console.log("It's a tie. Go again!")
         }
-        else{
-            return "No Tie!"
+        else if (result == "player-wins"){
+            console.log(`${playerChoice} beats ${computerChoice}. You Win!`)
+        }
+        else {
+            console.log(`${computerChoice} beats ${playerChoice}. You Lose!`)
         }
     }
 }
-const computerChoice = getComputerChoice();
+
 console.log(playRound(playerChoice,computerChoice));
 
