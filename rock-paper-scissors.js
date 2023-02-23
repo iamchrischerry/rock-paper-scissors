@@ -1,15 +1,18 @@
-const options = ["rock", "paper", "scissors"]
+const options = ["Rock", "Paper", "Scissors"]
 
 function getComputerChoice() {
     let computerChoice = options[Math.floor(Math.random() * options.length)];
-    console.log(computerChoice);
     return computerChoice;
 }
 const computerChoice = getComputerChoice();
 
 
-const playerChoice =  prompt("Choose your weapon...")
+let weapon = prompt("Choose your weapon...").toLowerCase();
+let playerChoice = weapon.charAt(0).toUpperCase() + weapon.slice(1);
 console.log(playerChoice);
+
+console.log(`Player chose ${playerChoice}`);
+console.log(`Computer chose ${computerChoice}`);
 
 function checkWinner(computerChoice, playerChoice) {
     if (playerChoice == computerChoice) {
