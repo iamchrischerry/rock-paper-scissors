@@ -9,7 +9,6 @@ const computerChoice = getComputerChoice();
 
 let weapon = prompt("Choose your weapon...").toLowerCase();
 let playerChoice = weapon.charAt(0).toUpperCase() + weapon.slice(1);
-console.log(playerChoice);
 
 console.log(`Player chose ${playerChoice}`);
 console.log(`Computer chose ${computerChoice}`);
@@ -18,9 +17,9 @@ function checkWinner(computerChoice, playerChoice) {
     if (playerChoice == computerChoice) {
         return "tie";
     }
-    else if ((playerChoice == "rock" && computerChoice == "scissors") ||
-             (playerChoice == "scissors" && computerChoice == "paper") ||
-             (playerChoice == "paper" && computerChoice == "rock")) {
+    else if ((playerChoice == "Rock" && computerChoice == "Scissors") ||
+             (playerChoice == "Scissors" && computerChoice == "Paper") ||
+             (playerChoice == "Paper" && computerChoice == "Rock")) {
         return "player-wins";
     }
     else { 
@@ -28,7 +27,7 @@ function checkWinner(computerChoice, playerChoice) {
     }
 }
 
-function playRound(playerChoice, computerChoice){
+function playRound(computerChoice, playerChoice){
     const result = checkWinner(computerChoice, playerChoice);{
         if (result == "tie"){
             console.log("It's a tie. Go again!")
@@ -36,11 +35,11 @@ function playRound(playerChoice, computerChoice){
         else if (result == "player-wins"){
             console.log(`${playerChoice} beats ${computerChoice}. You Win!`)
         }
-        else {
+        else if (result == "computer-wins"){
             console.log(`${computerChoice} beats ${playerChoice}. You Lose!`)
         }
     }
 }
 
-console.log(playRound(playerChoice,computerChoice));
+console.log(playRound(computerChoice, playerChoice));
 
